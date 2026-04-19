@@ -1673,11 +1673,9 @@ img.dlc-img[src$=".jpg"] {
   font-weight: 600
 }
 
-/* CONTACT */
+/* CONTACT (Section ID maintained for nav, styles handled via class) */
 #contact {
-  background: #131313;
-  padding: 80px 40px;
-  text-align: center
+  text-align: center;
 }
 
 .ct-inner {
@@ -2102,9 +2100,7 @@ footer {
     padding: 80px 28px
   }
 
-  #contact {
-    padding: 80px 28px
-  }
+/* #contact padding removed to ensure full width segment */
 
   .svc-head-inner {
     padding: 0 32px 40px
@@ -2218,9 +2214,7 @@ footer {
     padding: 64px 18px
   }
 
-  #contact {
-    padding: 72px 18px
-  }
+/* #contact padding removed for full width */
 
   .ft-top {
     padding: 40px 18px 32px
@@ -2970,6 +2964,8 @@ footer {
   border-top: 1px solid rgba(78, 70, 57, .12);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  margin: 0;
 }
 
 /* ── LEFT PANEL ── */
@@ -3321,10 +3317,13 @@ footer {
   .contact-section {
     grid-template-columns: 1fr;
     min-height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .contact-left {
-    padding: 0 0 48px;
+    padding: 0 24px 48px;
   }
 
   .contact-right {
@@ -3340,7 +3339,7 @@ footer {
 
 @media(max-width:580px) {
   .contact-left {
-    padding: 0 0 36px;
+    padding: 0 20px 36px;
   }
 
   .contact-right {

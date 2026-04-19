@@ -60,7 +60,7 @@ function sbNav(el) {
 }
 
 // Privacy
-const sids = ['hero', 'about', 'projects', 'services', 'fee', 'devnet', 'loan', 'process', 'quote', 'founder', 'contact', 'reviews'];
+const sids = ['hero', 'about', 'services', 'fee', 'devnet', 'loan', 'process', 'quote', 'founder', 'contact', 'reviews'];
 function showPrivacy() {
   sids.forEach(id => { const e = document.getElementById(id); if (e) e.style.display = 'none'; });
   document.querySelectorAll('.panels,.twrap').forEach(e => e.style.display = 'none');
