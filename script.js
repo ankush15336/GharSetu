@@ -2,6 +2,22 @@ tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "
 
 
 
+// Nav scroll: add 'scrolled' class when page scrolls down
+const nav = document.getElementById('nav');
+if (nav) {
+  const onNavScroll = () => {
+    if (window.scrollY > 20) {
+      nav.classList.add('scrolled');
+      nav.classList.remove('at-top');
+    } else {
+      nav.classList.remove('scrolled');
+      nav.classList.add('at-top');
+    }
+  };
+  window.addEventListener('scroll', onNavScroll, { passive: true });
+  onNavScroll();
+}
+
 // Progress
 window.addEventListener('scroll', () => { document.getElementById('pb').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%'; }, { passive: true });
 
