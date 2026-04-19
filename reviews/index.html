@@ -1,574 +1,1941 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Reviews — GharSetu Realities</title>
-<meta name="description" content="Real stories from real buyers. See what GharSetu clients say about their property buying experience.">
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border-radius:0!important}
-html{scroll-behavior:smooth}
-body{font-family:"Manrope",sans-serif;background:#131313;color:#E5E2E1;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
-a{text-decoration:none;color:inherit}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:#131313}
-::-webkit-scrollbar-thumb{background:#E9C176}
-.serif{font-family:"Newsreader",serif}
-.serif-i{font-family:"Newsreader",serif;font-style:italic}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Client Reviews — GharSetu Realities</title>
+  <meta name="description"
+    content="Real stories from verified buyers. Read GharSetu client reviews and share your own experience.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=Manrope:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-/* PROGRESS */
-#pb{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#E9C176,#C5A059);width:0%;z-index:9999}
+    html {
+      scroll-behavior: smooth
+    }
 
-/* NAV */
-#nav{
-  position:absolute;top:0;left:0;right:0;z-index:500;
-  height:64px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 48px;background:linear-gradient(to bottom,rgba(13,13,13,.8),transparent);
-}
-.nav-logo{height:42px;width:auto;min-width:130px;object-fit:contain}
-.nav-back{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(229,226,225,.45);font-weight:500;transition:color .3s}
-.nav-back:hover{color:#E9C176}
-.nav-back svg{width:14px;height:14px;stroke:currentColor}
+    body {
+      font-family: "Manrope", sans-serif;
+      background: #0E0E0E;
+      color: #E5E2E1;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      cursor: none
+    }
 
-/* HERO STRIP */
-.rev-hero{
-  background:#0E0E0E;padding:100px 48px 56px;
-  border-bottom:1px solid rgba(78,70,57,.15);
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-}
-.rev-hero-rating{display:flex;align-items:center;gap:10px;margin-bottom:20px}
-.star-fill{width:18px;height:18px;fill:#E9C176}
-.rev-hero-count{font-size:.78rem;color:rgba(229,226,225,.35);letter-spacing:.06em}
+    img,
+    video {
+      display: block;
+      max-width: 100%
+    }
 
-/* SUBMIT CARD */
-.submit-card{
-  background:#0E0E0E;
-  border:1px solid rgba(78,70,57,.25);
-  padding:48px;
-  margin:48px 48px 0;
-  position:relative;overflow:hidden;
-}
-.submit-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#E9C176,#C5A059,transparent)}
-.form-label{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(229,226,225,.45);font-weight:600;margin-bottom:8px;display:block}
-.form-input{
-  width:100%;background:#131313;border:1px solid rgba(78,70,57,.3);
-  padding:13px 16px;font-family:"Manrope",sans-serif;font-size:.9rem;
-  color:#E5E2E1;transition:border-color .3s;outline:none;
-}
-.form-input:focus{border-color:#E9C176}
-.form-input::placeholder{color:rgba(229,226,225,.2)}
-textarea.form-input{resize:vertical;min-height:110px;line-height:1.7}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    a {
+      text-decoration: none;
+      color: inherit
+    }
 
-/* Star rating input */
-.star-input{display:flex;gap:6px;cursor:pointer}
-.star-input svg{width:28px;height:28px;fill:rgba(233,193,118,.2);transition:fill .2s;cursor:pointer}
-.star-input svg.active,.star-input svg:hover,.star-input svg.hovered{fill:#E9C176}
+    button {
+      cursor: none;
+      font-family: inherit;
+      border: none;
+      outline: none
+    }
 
-/* Media upload */
-.upload-area{
-  border:1px dashed rgba(78,70,57,.4);
-  padding:32px 24px;text-align:center;cursor:pointer;
-  transition:border-color .3s,background .3s;
-  position:relative;
-}
-.upload-area:hover{border-color:#E9C176;background:rgba(233,193,118,.02)}
-.upload-area input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.upload-icon{width:36px;height:36px;margin:0 auto 12px;stroke:rgba(229,226,225,.3)}
-.upload-label{font-size:.82rem;color:rgba(229,226,225,.35);line-height:1.6}
-.upload-label span{color:#E9C176;font-weight:500}
-.upload-label small{display:block;font-size:.7rem;color:rgba(229,226,225,.2);margin-top:4px}
-.preview-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.preview-item{width:72px;height:72px;overflow:hidden;position:relative;background:#1C1B1B;border:1px solid rgba(78,70,57,.3)}
-.preview-item img,.preview-item video{width:100%;height:100%;object-fit:cover;display:block}
-.preview-remove{position:absolute;top:2px;right:2px;width:16px;height:16px;background:rgba(0,0,0,.75);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;font-weight:700;border:none;line-height:1}
+    input,
+    textarea {
+      font-family: inherit;
+      outline: none
+    }
 
-/* Submit button */
-.submit-btn{
-  background:linear-gradient(135deg,#E9C176,#C5A059);color:#412D00;
-  padding:14px 40px;font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;
-  font-weight:700;border:none;cursor:pointer;transition:opacity .3s;
-  display:inline-flex;align-items:center;gap:10px;margin-top:24px;
-}
-.submit-btn:hover{opacity:.88}
-.submit-btn:disabled{opacity:.4;cursor:not-allowed}
-.submit-btn svg{width:16px;height:16px}
+    ::-webkit-scrollbar {
+      width: 2px
+    }
 
-/* SUCCESS STATE */
-#success-msg{display:none;text-align:center;padding:48px 24px}
-#success-msg .check-circle{width:60px;height:60px;background:rgba(233,193,118,.1);border:1px solid rgba(233,193,118,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+    ::-webkit-scrollbar-track {
+      background: #0E0E0E
+    }
 
-/* EXISTING REVIEWS */
-.reviews-section{padding:48px 48px 80px}
-.rev-filters{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
-.rev-filter{padding:7px 18px;border:1px solid rgba(78,70,57,.25);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(229,226,225,.35);cursor:pointer;transition:all .3s;background:transparent;font-family:"Manrope",sans-serif}
-.rev-filter.active,.rev-filter:hover{border-color:#E9C176;color:#E9C176}
-.rev-masonry{columns:3;gap:16px;column-fill:balance}
-.rev-tile{
-  break-inside:avoid;
-  background:#0E0E0E;border:1px solid rgba(78,70,57,.15);
-  padding:28px 26px;margin-bottom:16px;
-  transition:border-color .35s,background .35s;
-  display:block;
-}
-.rev-tile:hover{background:#1C1B1B;border-color:rgba(78,70,57,.3)}
-.rev-tile-stars{display:flex;gap:3px;margin-bottom:12px}
-.rev-tile-star{width:13px;height:13px}
-.rev-tile-text{font-family:"Newsreader",serif;font-size:.98rem;font-style:italic;color:rgba(229,226,225,.55);line-height:1.65;margin-bottom:18px}
-.rev-tile-media{margin-bottom:18px;overflow:hidden;position:relative}
-.rev-tile-media img{width:100%;max-height:200px;object-fit:cover;filter:brightness(.8) saturate(.85);transition:filter .5s}
-.rev-tile:hover .rev-tile-media img{filter:brightness(.9) saturate(.95)}
-.rev-tile-media-badge{position:absolute;top:8px;right:8px;background:rgba(13,13,13,.8);padding:3px 8px;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:#E9C176;font-weight:600}
-.rev-tile-author{display:flex;align-items:center;gap:10px;border-top:1px solid rgba(78,70,57,.15);padding-top:14px;margin-top:2px}
-.rev-tile-avatar{width:34px;height:34px;background:rgba(233,193,118,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.rev-tile-init{font-family:"Newsreader",serif;font-size:.95rem;font-weight:500;color:#E9C176}
-.rev-tile-name{font-size:.78rem;font-weight:600;color:rgba(229,226,225,.65)}
-.rev-tile-detail{font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(229,226,225,.22);margin-top:2px}
-.rev-tile-badge{font-size:.54rem;letter-spacing:.13em;text-transform:uppercase;color:#E9C176;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:5px}
-.rev-tile-badge::before{content:"";width:8px;height:1.5px;background:#E9C176;display:block}
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(#E9C176, #C5A059)
+    }
 
-/* WA FLOAT */
-.wafl{position:fixed;bottom:28px;right:28px;z-index:400;width:54px;height:54px;border-radius:50%!important;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;animation:wapop .8s cubic-bezier(.16,1,.3,1) 1s both}
-@keyframes wapop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
-.wafl:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,.5)}
+    .sf {
+      font-family: "Newsreader", serif
+    }
 
-/* FOOTER */
-.rev-footer{background:#0E0E0E;border-top:1px solid rgba(78,70,57,.12);padding:24px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.rev-footer-copy{font-size:.67rem;letter-spacing:.06em;color:rgba(229,226,225,.14)}
-.rev-footer-back{font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(233,193,118,.4);transition:color .3s}
-.rev-footer-back:hover{color:#E9C176}
+    .si {
+      font-family: "Newsreader", serif;
+      font-style: italic
+    }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .rev-masonry{columns:2}
-  .submit-card{padding:32px 24px;margin:32px 24px 0}
-  .form-grid{grid-template-columns:1fr}
-  .rev-hero,.reviews-section{padding-left:24px;padding-right:24px}
-  #nav{padding:0 24px}
-}
-@media(max-width:600px){
-  .rev-masonry{columns:1}
-  .submit-card{padding:24px 18px;margin:24px 18px 0}
-  .rev-hero,.reviews-section{padding-left:18px;padding-right:18px}
-  .rev-footer{padding:20px 18px;flex-direction:column;text-align:center}
-  #nav{padding:0 18px}
-  .nav-logo{height:34px}
-  .form-grid{grid-template-columns:1fr}
-}
-</style>
+    :root {
+      --gold: #E9C176;
+      --gold2: #C5A059;
+      --gold3: #F5D896;
+      --cream: #E5E2E1;
+      --muted: rgba(229, 226, 225, .28);
+      --g0: #070A08;
+      --g1: #0E0E0E;
+      --g2: #131313;
+      --g3: #1C1B1B;
+      --border: rgba(78, 70, 57, .18);
+      --border2: rgba(78, 70, 57, .35);
+      --ease: cubic-bezier(.16, 1, .3, 1);
+      --ease2: cubic-bezier(.4, 0, .2, 1);
+    }
+
+    /* CURSOR */
+    #cd,
+    #cr {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%)
+    }
+
+    #cd {
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      mix-blend-mode: screen;
+      transition: transform .1s
+    }
+
+    #cr {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(233, 193, 118, .35);
+      border-radius: 50%;
+      transition: width .3s var(--ease), height .3s var(--ease), border-color .3s, background .3s
+    }
+
+    body.ch #cr {
+      width: 56px;
+      height: 56px;
+      border-color: rgba(233, 193, 118, .6);
+      background: rgba(233, 193, 118, .04)
+    }
+
+    body.ca #cd {
+      transform: translate(-50%, -50%) scale(.6)
+    }
+
+    @media(pointer:coarse) {
+
+      #cd,
+      #cr {
+        display: none
+      }
+
+      body {
+        cursor: auto
+      }
+
+      button {
+        cursor: pointer
+      }
+    }
+
+    /* PROGRESS */
+    #pb {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9998;
+      height: 1.5px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--g1), var(--gold), var(--gold3), var(--gold2));
+      transition: width .1s linear
+    }
+
+    /* NAV */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      transition: background .5s var(--ease), backdrop-filter .5s
+    }
+
+    #nav.sc {
+      background: rgba(7, 10, 8, .92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .nl {
+      height: 38px;
+      width: auto;
+      min-width: 120px;
+      max-width: 180px;
+      object-fit: contain;
+      display: block
+    }
+
+    .nb {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .65rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      transition: color .3s var(--ease);
+      padding: 6px 0;
+      position: relative
+    }
+
+    .nb::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width .4s var(--ease)
+    }
+
+    .nb:hover {
+      color: var(--gold)
+    }
+
+    .nb:hover::after {
+      width: 100%
+    }
+
+    .nb svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      transition: transform .3s var(--ease)
+    }
+
+    .nb:hover svg {
+      transform: translateX(-3px)
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      background: var(--g0);
+      padding: 0 64px 72px
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 80% 40%, rgba(233, 193, 118, .04) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 20% 80%, rgba(27, 58, 40, .15) 0%, transparent 50%)
+    }
+
+    .hero-amb {
+      position: absolute;
+      right: -3%;
+      bottom: -8%;
+      font-family: "Newsreader", serif;
+      font-weight: 700;
+      font-size: clamp(300px, 40vw, 600px);
+      color: rgba(233, 193, 118, .025);
+      line-height: 1;
+      letter-spacing: -.04em;
+      user-select: none;
+      pointer-events: none
+    }
+
+    .hero-rule {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: opacity .8s var(--ease), transform .8s var(--ease)
+    }
+
+    .hero-rule.in {
+      opacity: 1;
+      transform: scaleX(1)
+    }
+
+    .hero-lbl {
+      font-size: .6rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: rgba(229, 226, 225, .25);
+      font-weight: 600;
+      margin-bottom: 16px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .8s var(--ease) .1s, transform .8s var(--ease) .1s
+    }
+
+    .hero-lbl.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .hero-h1 {
+      font-family: "Newsreader", serif;
+      font-size: clamp(3.5rem, 8vw, 7.5rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -.03em;
+      color: var(--cream)
+    }
+
+    .hero-h1 span {
+      display: block;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease)
+    }
+
+    .hero-h1 span:nth-child(1) {
+      transition-delay: .15s
+    }
+
+    .hero-h1 span:nth-child(2) {
+      transition-delay: .25s;
+      font-style: italic;
+      color: var(--gold)
+    }
+
+    .hero-h1 span.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .hero-bot {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 24px
+    }
+
+    .hero-rb {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s var(--ease) .4s, transform .8s var(--ease) .4s
+    }
+
+    .hero-rb.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .hero-stars {
+      display: flex;
+      gap: 5px
+    }
+
+    .h-star {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold);
+      transition: transform .3s var(--ease)
+    }
+
+    .h-star:hover {
+      transform: scale(1.25)
+    }
+
+    .hero-rl {
+      font-size: .78rem;
+      color: var(--muted);
+      letter-spacing: .06em
+    }
+
+    .hero-rl strong {
+      color: var(--gold);
+      font-weight: 600
+    }
+
+    .hero-sub {
+      max-width: 360px;
+      font-size: .88rem;
+      line-height: 1.78;
+      color: rgba(229, 226, 225, .35);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s var(--ease) .5s, transform .8s var(--ease) .5s
+    }
+
+    .hero-sub.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .hero-sc {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity .8s var(--ease) .8s
+    }
+
+    .hero-sc.in {
+      opacity: 1
+    }
+
+    .sc-txt {
+      font-size: .56rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(229, 226, 225, .2)
+    }
+
+    .sc-ln {
+      width: 1px;
+      height: 44px;
+      background: rgba(229, 226, 225, .08);
+      position: relative;
+      overflow: hidden
+    }
+
+    .sc-fi {
+      position: absolute;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      animation: scF 2s ease-in-out infinite
+    }
+
+    @keyframes scF {
+      0% {
+        top: -100%
+      }
+
+      50% {
+        top: 0
+      }
+
+      100% {
+        top: 100%
+      }
+    }
+
+    /* STATS */
+    .stats {
+      background: var(--g2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .sc- {
+      padding: 32px 28px;
+      border-right: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: background .4s var(--ease)
+    }
+
+    .sc-:last-child {
+      border-right: none
+    }
+
+    .sc-::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: linear-gradient(to right, var(--gold2), var(--gold));
+      transition: width .5s var(--ease)
+    }
+
+    .sc-:hover {
+      background: var(--g3)
+    }
+
+    .sc-:hover::before {
+      width: 100%
+    }
+
+    .sn {
+      font-family: "Newsreader", serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px
+    }
+
+    .sl {
+      font-size: .58rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500
+    }
+
+    /* REVEAL */
+    .rv {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease)
+    }
+
+    .rv.on {
+      opacity: 1;
+      transform: none
+    }
+
+    .rvr {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease)
+    }
+
+    .rvr.on {
+      opacity: 1;
+      transform: none
+    }
+
+    .d1 {
+      transition-delay: .08s
+    }
+
+    .d2 {
+      transition-delay: .16s
+    }
+
+    .d3 {
+      transition-delay: .24s
+    }
+
+    .d4 {
+      transition-delay: .32s
+    }
+
+    /* FORM SECTION */
+    .fs {
+      background: var(--g1);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 88px 0
+    }
+
+    .fi {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 64px
+    }
+
+    .fw {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start
+    }
+
+    /* Floating labels */
+    .fld {
+      position: relative;
+      margin-bottom: 20px
+    }
+
+    .fll {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      pointer-events: none;
+      transition: all .3s var(--ease);
+      transform-origin: left top
+    }
+
+    .fli {
+      width: 100%;
+      background: var(--g2);
+      border: 1px solid var(--border2);
+      padding: 26px 16px 10px;
+      font-size: .9rem;
+      color: var(--cream);
+      transition: border-color .3s var(--ease), background .3s;
+      resize: none
+    }
+
+    .fli:focus {
+      border-color: var(--gold);
+      background: var(--g3)
+    }
+
+    .fli:focus~.fll,
+    .fli:not(:placeholder-shown)~.fll {
+      top: 7px;
+      font-size: .52rem;
+      color: var(--gold)
+    }
+
+    .fli::placeholder {
+      color: transparent
+    }
+
+    .fln {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--gold);
+      transition: width .4s var(--ease)
+    }
+
+    .fli:focus~.fln {
+      width: 100%
+    }
+
+    textarea.fli {
+      min-height: 120px;
+      line-height: 1.7
+    }
+
+    /* Stars */
+    .sl2 {
+      font-size: .6rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 10px
+    }
+
+    .sr {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 22px
+    }
+
+    .sb {
+      width: 34px;
+      height: 34px;
+      fill: rgba(233, 193, 118, .15);
+      transition: fill .2s var(--ease), transform .25s var(--ease2);
+      cursor: none
+    }
+
+    .sb.lit,
+    .sb.hv {
+      fill: var(--gold)
+    }
+
+    .sb:active {
+      transform: scale(.85)
+    }
+
+    /* Upload */
+    .uz {
+      position: relative;
+      border: 1px dashed rgba(78, 70, 57, .45);
+      padding: 36px 24px;
+      text-align: center;
+      transition: border-color .3s var(--ease), background .3s;
+      overflow: hidden;
+      margin-bottom: 18px
+    }
+
+    .uz.dg {
+      border-color: var(--gold);
+      background: rgba(233, 193, 118, .03)
+    }
+
+    .uz input[type=file] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: none;
+      width: 100%;
+      height: 100%
+    }
+
+    .ui {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 12px;
+      stroke: rgba(229, 226, 225, .25);
+      transition: stroke .3s
+    }
+
+    .uz:hover .ui,
+    .uz.dg .ui {
+      stroke: var(--gold)
+    }
+
+    .ut {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.65
+    }
+
+    .ut strong {
+      color: var(--gold);
+      font-weight: 600
+    }
+
+    .ut small {
+      display: block;
+      font-size: .68rem;
+      color: rgba(229, 226, 225, .2);
+      margin-top: 4px
+    }
+
+    /* Preview */
+    .pg {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .pi {
+      width: 72px;
+      height: 72px;
+      overflow: hidden;
+      position: relative;
+      background: var(--g3);
+      border: 1px solid var(--border);
+      animation: piIn .4s var(--ease)
+    }
+
+    @keyframes piIn {
+      from {
+        opacity: 0;
+        transform: scale(.8)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .pi img,
+    .pi video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .pr {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 18px;
+      height: 18px;
+      background: rgba(0, 0, 0, .8);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .6rem;
+      font-weight: 700;
+      cursor: none;
+      transition: background .2s;
+      border: none
+    }
+
+    .pr:hover {
+      background: rgba(200, 0, 0, .8)
+    }
+
+    /* Submit */
+    .subbtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #412D00;
+      padding: 14px 36px;
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: none;
+      cursor: none;
+      transition: opacity .3s, transform .25s var(--ease), box-shadow .3s;
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px
+    }
+
+    .subbtn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, .15), transparent);
+      opacity: 0;
+      transition: opacity .3s
+    }
+
+    .subbtn:hover::before {
+      opacity: 1
+    }
+
+    .subbtn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(233, 193, 118, .3)
+    }
+
+    .subbtn:active {
+      transform: none;
+      box-shadow: 0 4px 16px rgba(233, 193, 118, .2)
+    }
+
+    .subbtn:disabled {
+      opacity: .45;
+      transform: none;
+      box-shadow: none
+    }
+
+    .subbtn svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      transition: transform .3s var(--ease)
+    }
+
+    .subbtn:hover svg {
+      transform: translateX(4px)
+    }
+
+    .serr {
+      margin-top: 12px;
+      font-size: .78rem;
+      color: rgba(233, 193, 118, .75);
+      display: none;
+      padding: 10px 14px;
+      background: rgba(233, 193, 118, .06);
+      border-left: 2px solid var(--gold)
+    }
+
+    .cr {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 2px;
+      cursor: none
+    }
+
+    .cc {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      cursor: none
+    }
+
+    .ct {
+      font-size: .76rem;
+      color: rgba(229, 226, 229, .3);
+      line-height: 1.65
+    }
+
+    /* Success */
+    #smsg {
+      display: none;
+      text-align: center;
+      padding: 48px 0
+    }
+
+    .cc2 {
+      width: 64px;
+      height: 64px;
+      background: rgba(233, 193, 118, .08);
+      border: 1px solid rgba(233, 193, 118, .25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      animation: cb .6s var(--ease)
+    }
+
+    @keyframes cb {
+      from {
+        transform: scale(0);
+        opacity: 0
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1
+      }
+    }
+
+    /* Why items */
+    .wi {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      transition: padding-left .3s var(--ease)
+    }
+
+    .wi:first-child {
+      border-top: 1px solid var(--border)
+    }
+
+    .wi:hover {
+      padding-left: 6px
+    }
+
+    .wic {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      background: rgba(233, 193, 118, .07);
+      border: 1px solid rgba(233, 193, 118, .15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .3s, border-color .3s
+    }
+
+    .wi:hover .wic {
+      background: rgba(233, 193, 118, .12);
+      border-color: rgba(233, 193, 118, .3)
+    }
+
+    .wic svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--gold);
+      stroke-width: 1.5;
+      fill: none
+    }
+
+    .wt {
+      font-size: .84rem;
+      font-weight: 600;
+      color: rgba(229, 226, 225, .6);
+      margin-bottom: 3px;
+      transition: color .3s
+    }
+
+    .wi:hover .wt {
+      color: rgba(229, 226, 225, .85)
+    }
+
+    .wd {
+      font-size: .76rem;
+      color: rgba(229, 226, 225, .25);
+      line-height: 1.65
+    }
+
+    /* Rating bars */
+    .rc {
+      margin-top: 28px;
+      background: var(--g2);
+      border: 1px solid var(--border);
+      padding: 24px 22px
+    }
+
+    .rcl {
+      font-size: .56rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(229, 226, 225, .2);
+      font-weight: 600;
+      margin-bottom: 16px
+    }
+
+    .rbr {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px
+    }
+
+    .rbr:last-child {
+      margin-bottom: 0
+    }
+
+    .rbn {
+      font-size: .72rem;
+      color: var(--muted);
+      width: 84px;
+      flex-shrink: 0
+    }
+
+    .rbt {
+      flex: 1;
+      height: 2px;
+      background: rgba(78, 70, 57, .28);
+      position: relative;
+      overflow: hidden
+    }
+
+    .rbf {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, var(--gold2), var(--gold));
+      transition: width 1.4s var(--ease)
+    }
+
+    .rbv {
+      font-size: .7rem;
+      color: var(--gold);
+      width: 26px;
+      text-align: right;
+      flex-shrink: 0;
+      font-weight: 600
+    }
+
+    /* Section labels */
+    .sl3 {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .6rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 14px
+    }
+
+    .sl3::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      background: var(--gold);
+      display: block
+    }
+
+    .sh2 {
+      font-family: "Newsreader", serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--cream)
+    }
+
+    .sh2 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 400
+    }
+
+    /* REVIEWS */
+    .rs {
+      background: var(--g1);
+      padding: 72px 0 88px;
+      border-top: 1px solid var(--border)
+    }
+
+    .ri {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 64px
+    }
+
+    .rh {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 16px
+    }
+
+    /* Filters */
+    .fb {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap
+    }
+
+    .fbt {
+      padding: 7px 18px;
+      border: 1px solid var(--border2);
+      background: transparent;
+      font-size: .6rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      cursor: none;
+      transition: all .3s var(--ease);
+      position: relative;
+      overflow: hidden
+    }
+
+    .fbt::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(233, 193, 118, .1), transparent);
+      transform: translateX(-100%);
+      transition: transform .4s var(--ease)
+    }
+
+    .fbt:hover::before,
+    .fbt.act::before {
+      transform: translateX(0)
+    }
+
+    .fbt.act,
+    .fbt:hover {
+      border-color: var(--gold);
+      color: var(--gold)
+    }
+
+    /* Masonry */
+    .mn {
+      columns: 3;
+      gap: 14px;
+      column-fill: balance
+    }
+
+    @media(max-width:960px) {
+      .mn {
+        columns: 2
+      }
+    }
+
+    @media(max-width:560px) {
+      .mn {
+        columns: 1
+      }
+    }
+
+    /* Tile */
+    .rt {
+      break-inside: avoid;
+      background: var(--g2);
+      border: 1px solid var(--border);
+      padding: 28px 26px;
+      margin-bottom: 14px;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease), background .35s var(--ease), border-color .35s, box-shadow .35s
+    }
+
+    .rt::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: linear-gradient(to right, var(--gold2), var(--gold));
+      transition: width .5s var(--ease)
+    }
+
+    .rt:hover {
+      background: var(--g3);
+      border-color: var(--border2);
+      transform: translateY(-3px) !important;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .35)
+    }
+
+    .rt:hover::before {
+      width: 100%
+    }
+
+    .rt.vs {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .rt.hd {
+      opacity: 0;
+      transform: scale(.96);
+      pointer-events: none;
+      transition: opacity .3s var(--ease2), transform .3s var(--ease2)
+    }
+
+    .tb {
+      font-size: .54rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    .tb::before {
+      content: "";
+      width: 8px;
+      height: 1.5px;
+      background: var(--gold);
+      display: block
+    }
+
+    .ts {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 14px
+    }
+
+    .tss {
+      width: 13px;
+      height: 13px
+    }
+
+    .tm {
+      margin-bottom: 16px;
+      overflow: hidden;
+      position: relative
+    }
+
+    .tm img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      filter: brightness(.78) saturate(.88);
+      transition: transform .8s var(--ease), filter .5s;
+      display: block
+    }
+
+    .rt:hover .tm img {
+      transform: scale(1.04);
+      filter: brightness(.88) saturate(.95)
+    }
+
+    .mb {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(7, 10, 8, .85);
+      backdrop-filter: blur(8px);
+      padding: 3px 8px;
+      font-size: .52rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700
+    }
+
+    .tx {
+      font-family: "Newsreader", serif;
+      font-size: .97rem;
+      font-style: italic;
+      color: rgba(229, 226, 225, .52);
+      line-height: 1.7;
+      margin-bottom: 18px
+    }
+
+    .ta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px
+    }
+
+    .tav {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      background: rgba(233, 193, 118, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .tin {
+      font-family: "Newsreader", serif;
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--gold)
+    }
+
+    .tn {
+      font-size: .78rem;
+      font-weight: 700;
+      color: rgba(229, 226, 225, .65)
+    }
+
+    .td {
+      font-size: .58rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: rgba(229, 226, 225, .22);
+      margin-top: 2px
+    }
+
+    /* WA */
+    .wafl {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 400;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, .4);
+      text-decoration: none;
+      cursor: none;
+      transition: transform .3s var(--ease), box-shadow .3s;
+      animation: wap .7s var(--ease) 1.5s both
+    }
+
+    @keyframes wap {
+      from {
+        transform: scale(0);
+        opacity: 0
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1
+      }
+    }
+
+    .wafl:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 10px 36px rgba(37, 211, 102, .5)
+    }
+
+    .wpl {
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 2px solid rgba(37, 211, 102, .35);
+      animation: wpu 2.5s ease-out infinite
+    }
+
+    @keyframes wpu {
+      0% {
+        transform: scale(1);
+        opacity: .8
+      }
+
+      70% {
+        transform: scale(1.2);
+        opacity: 0
+      }
+
+      100% {
+        transform: scale(1.2);
+        opacity: 0
+      }
+    }
+
+    /* FOOTER */
+    .pf {
+      background: var(--g0);
+      border-top: 1px solid var(--border);
+      padding: 22px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .fc {
+      font-size: .65rem;
+      letter-spacing: .07em;
+      color: rgba(229, 226, 225, .15)
+    }
+
+    .fb2 {
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(233, 193, 118, .35);
+      transition: color .3s
+    }
+
+    .fb2:hover {
+      color: var(--gold)
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1100px) {
+      .hero {
+        padding: 0 32px 60px
+      }
+
+      .fi,
+      .ri {
+        padding: 0 32px
+      }
+
+      .fw {
+        grid-template-columns: 1fr;
+        gap: 48px
+      }
+
+      .pf {
+        padding: 20px 32px
+      }
+    }
+
+    @media(max-width:640px) {
+      .hero {
+        padding: 0 20px 56px
+      }
+
+      .hero-h1 {
+        font-size: clamp(3rem, 12vw, 4.5rem)
+      }
+
+      .fi,
+      .ri {
+        padding: 0 20px
+      }
+
+      .fs,
+      .rs {
+        padding: 64px 0
+      }
+
+      .pf {
+        padding: 18px 20px;
+        flex-direction: column;
+        text-align: center
+      }
+
+      #nav {
+        padding: 0 20px
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .sc-:nth-child(2) {
+        border-right: none
+      }
+
+      .sc-:nth-child(3) {
+        border-top: 1px solid var(--border);
+        border-right: 1px solid var(--border)
+      }
+
+      .sc-:nth-child(4) {
+        border-top: 1px solid var(--border);
+        border-right: none
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <div id="pb"></div>
+  <div id="cd"></div>
+  <div id="cr"></div>
 
-<div id="pb"></div>
-
-<!-- WA FLOAT -->
-<a href="https://wa.me/91XXXXXXXXXX" class="wafl" target="_blank" aria-label="WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="28" height="28">
-    <path fill="#fff" d="M4.9 43.3l2.7-9.8C5.9 30.6 5 27.3 5 24 5 13.5 13.5 5 24 5s19 8.5 19 19-8.5 19-19 19c-3.2 0-6.2-.8-8.8-2.2L4.9 43.3z"/>
-    <path fill="#25D366" d="M24 7c-9.4 0-17 7.6-17 17 0 3.1.8 6 2.3 8.5l.4.7-1.7 6.1 6.3-1.6.7.4C17.8 39.4 20.8 40 24 40c9.4 0 17-7.6 17-17S33.4 7 24 7z"/>
-    <path fill="#fff" d="M35 29.4c-.4 1.1-2 2-3.2 2.3-.8.2-1.9.3-5.6-1.2-4.7-1.9-7.7-6.7-7.9-7-.2-.3-1.7-2.2-1.7-4.3 0-2 1.1-3 1.5-3.4.4-.4.8-.5 1.1-.5h.8c.3 0 .6.1.9.7l1.3 3.1c.1.3.1.6-.1.9l-.5.7c-.2.3-.4.6-.2.9.8 1.3 1.8 2.5 3 3.5 1.1.9 2.3 1.5 3.4 1.8.4.1.7 0 1-.3l.5-.6c.3-.4.6-.5 1-.3l3 1.4c.3.2.5.3.5.6v1.1z"/>
-  </svg>
-</a>
-
-<!-- NAV -->
-<nav id="nav">
-  <img src="image/logo.jpeg" alt="GharSetu" class="nav-logo" onerror="this.style.display='none'">
-  <a href="index.html" class="nav-back">
-    <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-    Back to Home
+  <!-- WA -->
+  <a href="https://wa.me/919198197668" class="wafl" target="_blank" aria-label="WhatsApp">
+    <div class="wpl"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="28" height="28">
+      <path fill="#fff"
+        d="M4.9 43.3l2.7-9.8C5.9 30.6 5 27.3 5 24 5 13.5 13.5 5 24 5s19 8.5 19 19-8.5 19-19 19c-3.2 0-6.2-.8-8.8-2.2L4.9 43.3z" />
+      <path fill="#25D366"
+        d="M24 7c-9.4 0-17 7.6-17 17 0 3.1.8 6 2.3 8.5l.4.7-1.7 6.1 6.3-1.6.7.4C17.8 39.4 20.8 40 24 40c9.4 0 17-7.6 17-17S33.4 7 24 7z" />
+      <path fill="#fff"
+        d="M35 29.4c-.4 1.1-2 2-3.2 2.3-.8.2-1.9.3-5.6-1.2-4.7-1.9-7.7-6.7-7.9-7-.2-.3-1.7-2.2-1.7-4.3 0-2 1.1-3 1.5-3.4.4-.4.8-.5 1.1-.5h.8c.3 0 .6.1.9.7l1.3 3.1c.1.3.1.6-.1.9l-.5.7c-.2.3-.4.6-.2.9.8 1.3 1.8 2.5 3 3.5 1.1.9 2.3 1.5 3.4 1.8.4.1.7 0 1-.3l.5-.6c.3-.4.6-.5 1-.3l3 1.4c.3.2.5.3.5.6v1.1z" />
+    </svg>
   </a>
-</nav>
 
-<!-- HERO STRIP -->
-<div class="rev-hero" style="padding-top:90px">
-  <div style="font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(229,226,225,.18);margin-bottom:12px;font-weight:500">Verified Client Stories</div>
-  <div class="serif" style="font-size:clamp(2.6rem,6vw,5rem);color:#E5E2E1;line-height:1.05;letter-spacing:-.02em;font-weight:400">Client</div>
-  <div class="serif-i" style="font-size:clamp(2.6rem,6vw,5rem);line-height:1.05;letter-spacing:-.02em;color:#E9C176;font-weight:300;margin-bottom:20px">Reviews</div>
-  <div class="rev-hero-rating">
-    <div style="display:flex;gap:4px">
-      <svg class="star-fill" viewBox="0 0 20 20"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-      <svg class="star-fill" viewBox="0 0 20 20"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-      <svg class="star-fill" viewBox="0 0 20 20"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-      <svg class="star-fill" viewBox="0 0 20 20"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-      <svg class="star-fill" viewBox="0 0 20 20"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
+  <!-- NAV -->
+  <nav id="nav">
+    <img src="image/logo.png" alt="GharSetu" class="nl" onerror="this.style.display='none'">
+    <a href="/" class="nb">
+      <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <line x1="19" y1="12" x2="5" y2="12" />
+        <polyline points="12 19 5 12 12 5" />
+      </svg>
+      Back to Home
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-amb" aria-hidden="true">4.9</div>
+    <div class="hero-rule" id="hr"></div>
+    <div class="hero-lbl" id="hl">Verified Client Stories &nbsp;&middot;&nbsp; GharSetu Realities</div>
+    <h1 class="hero-h1">
+      <span id="ht1">Client</span>
+      <span id="ht2">Reviews.</span>
+    </h1>
+    <div class="hero-bot">
+      <div class="hero-rb" id="hrb">
+        <div class="hero-stars">
+          <svg class="h-star" viewBox="0 0 20 20">
+            <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+          </svg>
+          <svg class="h-star" viewBox="0 0 20 20">
+            <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+          </svg>
+          <svg class="h-star" viewBox="0 0 20 20">
+            <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+          </svg>
+          <svg class="h-star" viewBox="0 0 20 20">
+            <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+          </svg>
+          <svg class="h-star" viewBox="0 0 20 20">
+            <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+          </svg>
+        </div>
+        <div class="hero-rl"><strong>4.9 / 5</strong>&nbsp; &middot; &nbsp;120+ verified buyers</div>
+      </div>
+      <p class="hero-sub" id="hsb">Real stories from real people. Every review is from a genuine GharSetu client —
+        verified and unedited.</p>
     </div>
-    <span class="rev-hero-count">4.9 / 5 &nbsp;&middot;&nbsp; 120+ verified buyers</span>
+    <div class="hero-sc" id="hsc">
+      <span class="sc-txt">Scroll</span>
+      <div class="sc-ln">
+        <div class="sc-fi"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="sc- rv"><span class="sn">120+</span><span class="sl">Verified Reviews</span></div>
+    <div class="sc- rv d1"><span class="sn">4.9</span><span class="sl">Average Rating</span></div>
+    <div class="sc- rv d2"><span class="sn">98%</span><span class="sl">Recommend Us</span></div>
+    <div class="sc- rv d3"><span class="sn">&#8377;100Cr+</span><span class="sl">Deals Closed</span></div>
   </div>
-  <p style="font-size:.88rem;color:rgba(229,226,225,.3);max-width:480px;line-height:1.7;text-align:center">Real stories from real people. Every review here is from a genuine GharSetu client — verified and unedited.</p>
-</div>
 
-<!-- SUBMIT YOUR REVIEW FORM -->
-<div class="submit-card">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start" class="submit-grid">
-
-    <!-- Left: Form -->
-    <div>
-      <div style="font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#E9C176;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:10px"><span style="width:16px;height:2px;background:#E9C176;display:block"></span>Leave Your Review</div>
-      <h2 class="serif" style="font-size:clamp(1.6rem,3vw,2.4rem);color:#E5E2E1;margin-bottom:28px">Share Your Experience</h2>
-
-      <div id="review-form">
-        <!-- Star Rating -->
-        <div style="margin-bottom:22px">
-          <label class="form-label">Your Rating *</label>
-          <div class="star-input" id="star-input" role="group" aria-label="Star rating">
-            <svg viewBox="0 0 20 20" data-val="1" onclick="setRating(1)" onmouseenter="hoverRating(1)" onmouseleave="unhoverRating()"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-            <svg viewBox="0 0 20 20" data-val="2" onclick="setRating(2)" onmouseenter="hoverRating(2)" onmouseleave="unhoverRating()"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-            <svg viewBox="0 0 20 20" data-val="3" onclick="setRating(3)" onmouseenter="hoverRating(3)" onmouseleave="unhoverRating()"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-            <svg viewBox="0 0 20 20" data-val="4" onclick="setRating(4)" onmouseenter="hoverRating(4)" onmouseleave="unhoverRating()"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-            <svg viewBox="0 0 20 20" data-val="5" onclick="setRating(5)" onmouseenter="hoverRating(5)" onmouseleave="unhoverRating()"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
+  <!-- FORM -->
+  <div class="fs">
+    <div class="fi">
+      <div class="fw">
+        <!-- LEFT -->
+        <div class="rv">
+          <div class="sl3">Leave Your Review</div>
+          <h2 class="sh2" style="margin-bottom:36px">Share Your<br><em>Experience</em></h2>
+          <div id="rfm">
+            <!-- Stars -->
+            <div style="margin-bottom:24px">
+              <div class="sl2">Your Rating *</div>
+              <div class="sr" id="srw">
+                <svg class="sb" viewBox="0 0 20 20" data-v="1">
+                  <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+                </svg>
+                <svg class="sb" viewBox="0 0 20 20" data-v="2">
+                  <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+                </svg>
+                <svg class="sb" viewBox="0 0 20 20" data-v="3">
+                  <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+                </svg>
+                <svg class="sb" viewBox="0 0 20 20" data-v="4">
+                  <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+                </svg>
+                <svg class="sb" viewBox="0 0 20 20" data-v="5">
+                  <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+                </svg>
+              </div>
+              <input type="hidden" id="rr" value="0">
+            </div>
+            <div class="fld"><input class="fli" type="text" id="rn" placeholder="Your Name"><label class="fll"
+                for="rn">Your Name *</label>
+              <div class="fln"></div>
+            </div>
+            <div class="fld"><input class="fli" type="text" id="rp" placeholder="Property Bought"><label class="fll"
+                for="rp">Property Bought</label>
+              <div class="fln"></div>
+            </div>
+            <div class="fld"><textarea class="fli" id="rt" rows="4" placeholder="Your Review"></textarea><label
+                class="fll" for="rt">Your Review *</label>
+              <div class="fln"></div>
+            </div>
+            <div style="margin-bottom:18px">
+              <div class="sl2" style="margin-bottom:10px">Photo / Video <span
+                  style="color:rgba(229,226,225,.2);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span>
+              </div>
+              <div class="uz" id="uz">
+                <input type="file" id="mi" accept="image/*,video/*" multiple>
+                <svg class="ui" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"
+                  viewBox="0 0 40 40">
+                  <rect x="4" y="8" width="32" height="24" />
+                  <path d="M4 26l9-9 7 7 5-5 11 10" />
+                  <circle cx="13" cy="15" r="3" stroke="rgba(233,193,118,.5)" />
+                </svg>
+                <div class="ut"><strong>Click to upload</strong> or drag &amp; drop<br><small>JPG &middot; PNG &middot;
+                    MP4 &middot; MOV &nbsp;&middot;&nbsp; Max 25MB</small></div>
+              </div>
+              <div class="pg" id="pg"></div>
+            </div>
+            <label class="cr"><input type="checkbox" class="cc" id="rc"><span class="ct">I consent to GharSetu
+                displaying this review on their website and marketing materials.</span></label>
+            <button class="subbtn" id="sbb" onclick="sub()">
+              Submit Review
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </button>
+            <div class="serr" id="se"></div>
           </div>
-          <input type="hidden" id="rating-val" value="0">
-        </div>
-
-        <!-- Name & Property -->
-        <div class="form-grid" style="margin-bottom:16px">
-          <div>
-            <label class="form-label" for="r-name">Your Name *</label>
-            <input class="form-input" type="text" id="r-name" placeholder="Rohit M.">
+          <div id="smsg">
+            <div class="cc2"><svg width="28" height="28" fill="none" stroke="var(--gold)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5" />
+              </svg></div>
+            <h3 class="sf" style="font-size:1.8rem;color:var(--cream);margin-bottom:10px">Thank You!</h3>
+            <p style="font-size:.86rem;color:var(--muted);line-height:1.7;max-width:300px;margin:0 auto">Your review has
+              been submitted. We'll verify and publish it within 24–48 hours.</p>
+            <a href="index.html"
+              style="display:inline-block;margin-top:24px;padding:11px 26px;border:1px solid var(--border2);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);transition:all .3s">Back
+              to Home</a>
           </div>
-          <div>
-            <label class="form-label" for="r-prop">Property Bought</label>
-            <input class="form-input" type="text" id="r-prop" placeholder="3 BHK · Prestige Sarjapura">
-          </div>
         </div>
-
-        <!-- Review Text -->
-        <div style="margin-bottom:16px">
-          <label class="form-label" for="r-text">Your Review *</label>
-          <textarea class="form-input" id="r-text" placeholder="Tell other buyers about your experience with GharSetu — the process, the team, the result..."></textarea>
-        </div>
-
-        <!-- Media Upload -->
-        <div style="margin-bottom:20px">
-          <label class="form-label">Photo / Video <span style="color:rgba(229,226,225,.25);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
-          <div class="upload-area" id="upload-area">
-            <input type="file" id="media-input" accept="image/*,video/*" multiple onchange="handleFiles(this.files)">
-            <svg class="upload-icon" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 36 36">
-              <rect x="4" y="6" width="28" height="24" stroke="rgba(229,226,225,.3)"/><path d="M4 24l8-8 6 6 4-4 10 10" stroke="rgba(229,226,225,.3)"/><circle cx="12" cy="14" r="3" stroke="rgba(233,193,118,.5)"/>
-            </svg>
-            <div class="upload-label">
-              <span>Click to upload</span> or drag photos &amp; videos here
-              <small>JPG, PNG, MP4, MOV · Max 25MB per file</small>
+        <!-- RIGHT -->
+        <div class="rvr d2">
+          <div class="sl3" style="margin-bottom:20px">Why Your Review Matters</div>
+          <div class="wi">
+            <div class="wic"><svg viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg></div>
+            <div>
+              <div class="wt">Help Serious Buyers</div>
+              <div class="wd">Real stories help others make confident &#8377;crore decisions — your words genuinely
+                matter.</div>
             </div>
           </div>
-          <div class="preview-grid" id="preview-grid"></div>
-        </div>
-
-        <!-- Optional consent -->
-        <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;margin-bottom:4px">
-          <input type="checkbox" id="r-consent" style="margin-top:3px;accent-color:#E9C176;width:15px;height:15px;flex-shrink:0">
-          <span style="font-size:.78rem;color:rgba(229,226,225,.35);line-height:1.6">I consent to GharSetu displaying this review (with my first name and property type) on their website and marketing materials.</span>
-        </label>
-
-        <button class="submit-btn" id="submit-btn" onclick="submitReview()">
-          Submit Review
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-        <div id="submit-error" style="display:none;margin-top:12px;font-size:.8rem;color:rgba(233,193,118,.7)"></div>
-      </div>
-
-      <!-- Success state -->
-      <div id="success-msg">
-        <div class="check-circle">
-          <svg width="28" height="28" fill="none" stroke="#E9C176" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <h3 class="serif" style="font-size:1.8rem;color:#E5E2E1;margin-bottom:10px">Thank You!</h3>
-        <p style="font-size:.88rem;color:rgba(229,226,225,.35);line-height:1.7;max-width:320px;margin:0 auto">Your review has been submitted. Our team will verify and publish it within 24–48 hours.</p>
-        <a href="index.html" style="display:inline-block;margin-top:24px;padding:12px 28px;border:1px solid rgba(78,70,57,.3);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(229,226,225,.4);transition:all .3s">Back to Home</a>
-      </div>
-    </div>
-
-    <!-- Right: Why review matters -->
-    <div style="padding-top:8px">
-      <div style="font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(229,226,225,.2);margin-bottom:20px;font-weight:600">Why Your Review Matters</div>
-      <div style="display:flex;flex-direction:column;gap:0">
-        <div style="display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(78,70,57,.12)">
-          <div style="width:32px;height:32px;background:rgba(233,193,118,.08);border:1px solid rgba(233,193,118,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="16" height="16" fill="none" stroke="#E9C176" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="wi">
+            <div class="wic"><svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
+            <div>
+              <div class="wt">100% Verified &amp; Unedited</div>
+              <div class="wd">Every review is published exactly as written. We never edit or filter genuine feedback.
+              </div>
+            </div>
           </div>
-          <div>
-            <div style="font-size:.84rem;font-weight:600;color:rgba(229,226,225,.65);margin-bottom:4px">Help Serious Buyers</div>
-            <div style="font-size:.78rem;color:rgba(229,226,225,.28);line-height:1.65">Real stories from real buyers help others make confident ₹crore decisions — your words matter.</div>
+          <div class="wi" style="border-bottom:none">
+            <div class="wic"><svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" />
+                <circle cx="8.5" cy="8.5" r="1.5" fill="var(--gold)" stroke="none" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg></div>
+            <div>
+              <div class="wt">Photo &amp; Video Welcome</div>
+              <div class="wd">Share your new home photos or a walkthrough video — buyers love seeing real results.</div>
+            </div>
           </div>
-        </div>
-        <div style="display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(78,70,57,.12)">
-          <div style="width:32px;height:32px;background:rgba(233,193,118,.08);border:1px solid rgba(233,193,118,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="16" height="16" fill="none" stroke="#E9C176" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <div style="font-size:.84rem;font-weight:600;color:rgba(229,226,225,.65);margin-bottom:4px">100% Verified &amp; Unedited</div>
-            <div style="font-size:.78rem;color:rgba(229,226,225,.28);line-height:1.65">Every review is published exactly as written. We never edit or filter genuine client feedback.</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:16px;padding:18px 0">
-          <div style="width:32px;height:32px;background:rgba(233,193,118,.08);border:1px solid rgba(233,193,118,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="16" height="16" fill="none" stroke="#E9C176" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          </div>
-          <div>
-            <div style="font-size:.84rem;font-weight:600;color:rgba(229,226,225,.65);margin-bottom:4px">Photo &amp; Video Welcome</div>
-            <div style="font-size:.78rem;color:rgba(229,226,225,.28);line-height:1.65">Share your new home photos or a video walkthrough — buyers love seeing real results.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Overall stats -->
-      <div style="margin-top:28px;background:#131313;border:1px solid rgba(78,70,57,.2);padding:24px">
-        <div style="font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(229,226,225,.2);margin-bottom:16px;font-weight:600">Overall Ratings</div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;align-items:center;gap:12px">
-            <span style="font-size:.75rem;color:rgba(229,226,225,.35);width:80px;flex-shrink:0">Transparency</span>
-            <div style="flex:1;height:3px;background:rgba(78,70,57,.25);position:relative"><div style="position:absolute;left:0;top:0;height:100%;width:98%;background:#E9C176"></div></div>
-            <span style="font-size:.72rem;color:#E9C176;width:28px;text-align:right;flex-shrink:0">4.9</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px">
-            <span style="font-size:.75rem;color:rgba(229,226,225,.35);width:80px;flex-shrink:0">Negotiation</span>
-            <div style="flex:1;height:3px;background:rgba(78,70,57,.25);position:relative"><div style="position:absolute;left:0;top:0;height:100%;width:96%;background:#E9C176"></div></div>
-            <span style="font-size:.72rem;color:#E9C176;width:28px;text-align:right;flex-shrink:0">4.8</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px">
-            <span style="font-size:.75rem;color:rgba(229,226,225,.35);width:80px;flex-shrink:0">Legal Support</span>
-            <div style="flex:1;height:3px;background:rgba(78,70,57,.25);position:relative"><div style="position:absolute;left:0;top:0;height:100%;width:99%;background:#E9C176"></div></div>
-            <span style="font-size:.72rem;color:#E9C176;width:28px;text-align:right;flex-shrink:0">4.9</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px">
-            <span style="font-size:.75rem;color:rgba(229,226,225,.35);width:80px;flex-shrink:0">Value for Fee</span>
-            <div style="flex:1;height:3px;background:rgba(78,70,57,.25);position:relative"><div style="position:absolute;left:0;top:0;height:100%;width:97%;background:#E9C176"></div></div>
-            <span style="font-size:.72rem;color:#E9C176;width:28px;text-align:right;flex-shrink:0">4.9</span>
+          <div class="rc">
+            <div class="rcl">Overall Ratings</div>
+            <div class="rbr"><span class="rbn">Transparency</span>
+              <div class="rbt">
+                <div class="rbf" data-w="98"></div>
+              </div><span class="rbv">4.9</span>
+            </div>
+            <div class="rbr"><span class="rbn">Negotiation</span>
+              <div class="rbt">
+                <div class="rbf" data-w="96"></div>
+              </div><span class="rbv">4.8</span>
+            </div>
+            <div class="rbr"><span class="rbn">Legal Support</span>
+              <div class="rbt">
+                <div class="rbf" data-w="99"></div>
+              </div><span class="rbv">4.9</span>
+            </div>
+            <div class="rbr"><span class="rbn">Value for Fee</span>
+              <div class="rbt">
+                <div class="rbf" data-w="97"></div>
+              </div><span class="rbv">4.9</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- EXISTING REVIEWS GRID -->
-<div class="reviews-section">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px">
-    <h3 class="serif" style="font-size:1.5rem;color:rgba(229,226,225,.7)">All Reviews</h3>
-    <div class="rev-filters">
-      <button class="rev-filter active" onclick="filterReviews('all',this)">All</button>
-      <button class="rev-filter" onclick="filterReviews('5',this)">5 Stars</button>
-      <button class="rev-filter" onclick="filterReviews('4',this)">4 Stars</button>
-      <button class="rev-filter" onclick="filterReviews('photo',this)">With Photo</button>
+  <!-- REVIEWS -->
+  <div class="rs">
+    <div class="ri">
+      <div class="rh rv">
+        <div>
+          <div class="sl3">All Reviews</div>
+          <h3 class="sf" style="font-size:1.7rem;color:rgba(229,226,225,.7);font-weight:400">What Clients Say</h3>
+        </div>
+        <div class="fb">
+          <button class="fbt act" onclick="flt('all',this)">All</button>
+          <button class="fbt" onclick="flt('5',this)">5 Stars</button>
+          <button class="fbt" onclick="flt('4',this)">4 Stars</button>
+          <button class="fbt" onclick="flt('photo',this)">With Photo</button>
+        </div>
+      </div>
+      <div class="mn" id="rg">
+
+        <div class="rt" data-s="5" data-t="photo">
+          <div class="tb">Verified Buyer</div>
+          <div class="ts"><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg></div>
+          <div class="tm"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=85&fit=crop"
+              alt="Property" loading="lazy">
+            <div class="mb">Photo</div>
+          </div>
+          <div class="tx">&ldquo;GharSetu made the entire process seamless. Got a Prestige property 8% below market
+            rate. Thorough legal support throughout.&rdquo;</div>
+          <div class="ta">
+            <div class="tav">
+              <div class="tin">R</div>
+            </div>
+            <div>
+              <div class="tn">Rohit M.</div>
+              <div class="td">3 BHK &middot; Prestige Sarjapura</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rt" data-s="5" data-t="text">
+          <div class="tb">NRI Buyer</div>
+          <div class="ts"><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg></div>
+          <div class="tx">&ldquo;Being NRI, I was worried about managing a Bangalore purchase remotely. The team handled
+            everything — from site visits to registration — keeping me informed at every step.&rdquo;</div>
+          <div class="ta">
+            <div class="tav">
+              <div class="tin">P</div>
+            </div>
+            <div>
+              <div class="tn">Priya &amp; Karan S.</div>
+              <div class="td">4 BHK Villa &middot; Brigade</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rt" data-s="5" data-t="photo">
+          <div class="tb">First-Time Buyer</div>
+          <div class="ts"><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg></div>
+          <div class="tm"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=85&fit=crop"
+              alt="New Home" loading="lazy">
+            <div class="mb">Photo</div>
+          </div>
+          <div class="tx">&ldquo;The 1% fee was unbelievable at first — I thought there&rsquo;d be hidden charges. There
+            were none. Professional, honest, best deal on my Sobha apartment.&rdquo;</div>
+          <div class="ta">
+            <div class="tav">
+              <div class="tin">A</div>
+            </div>
+            <div>
+              <div class="tn">Anand R.</div>
+              <div class="td">3 BHK &middot; Sobha Whitefield</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rt" data-s="4" data-t="text">
+          <div class="tb">Investor</div>
+          <div class="ts"><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="rgba(233,193,118,.18)">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg></div>
+          <div class="tx">&ldquo;I&rsquo;ve bought 3 properties over the years. GharSetu is the first where I genuinely
+            felt the advisor was on my side. Pre-launch access to Godrej at exceptional pricing.&rdquo;</div>
+          <div class="ta">
+            <div class="tav">
+              <div class="tin">S</div>
+            </div>
+            <div>
+              <div class="tn">Suresh V.</div>
+              <div class="td">3 BHK &middot; Godrej Properties</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rt" data-s="5" data-t="text">
+          <div class="tb">Verified Buyer</div>
+          <div class="ts"><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg><svg class="tss" viewBox="0 0 20 20" fill="#E9C176">
+              <path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z" />
+            </svg></div>
+          <div class="tx">&ldquo;From the very first call, the team understood exactly what I needed. Shortlisted 4
+            verified options in 2 weeks. Registration done in under 60 days. Truly exceptional.&rdquo;</div>
+          <div class="ta">
+            <div class="tav">
+              <div class="tin">M</div>
+            </div>
+            <div>
+              <div class="tn">Meera T.</div>
+              <div class="td">2 BHK &middot; Birla Estates</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
-  <div class="rev-masonry" id="reviews-container">
 
-    <!-- Review 1 — with photo -->
-    <div class="rev-tile" data-stars="5" data-type="photo">
-      <div class="rev-tile-badge">Verified Buyer</div>
-      <div class="rev-tile-stars">
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-      </div>
-      <div class="rev-tile-media">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=85&fit=crop" alt="Property">
-        <div class="rev-tile-media-badge">Photo</div>
-      </div>
-      <div class="rev-tile-text">&ldquo;GharSetu made the entire process seamless. Got a Prestige property 8% below market rate — I couldn't believe it. Thorough legal support throughout.&rdquo;</div>
-      <div class="rev-tile-author">
-        <div class="rev-tile-avatar"><div class="rev-tile-init">R</div></div>
-        <div><div class="rev-tile-name">Rohit M.</div><div class="rev-tile-detail">3 BHK &middot; Prestige Sarjapura</div></div>
-      </div>
-    </div>
+  <!-- FOOTER -->
+  <footer class="pf">
+    <div class="fc">&copy; 2026 GharSetu Realities. All rights reserved.</div>
+    <a href="/" class="fb2">&larr; Back to GharSetu</a>
+  </footer>
 
-    <!-- Review 2 -->
-    <div class="rev-tile" data-stars="5" data-type="text">
-      <div class="rev-tile-badge">NRI Buyer</div>
-      <div class="rev-tile-stars">
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-      </div>
-      <div class="rev-tile-text">&ldquo;Being NRI, I was worried about managing a Bangalore purchase remotely. The team handled everything — from site visits to registration — while keeping me informed at every milestone.&rdquo;</div>
-      <div class="rev-tile-author">
-        <div class="rev-tile-avatar"><div class="rev-tile-init">P</div></div>
-        <div><div class="rev-tile-name">Priya &amp; Karan S.</div><div class="rev-tile-detail">4 BHK Villa &middot; Brigade</div></div>
-      </div>
-    </div>
-
-    <!-- Review 3 — with photo -->
-    <div class="rev-tile" data-stars="5" data-type="photo">
-      <div class="rev-tile-badge">First-Time Buyer</div>
-      <div class="rev-tile-stars">
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-      </div>
-      <div class="rev-tile-media">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=85&fit=crop" alt="New Home">
-        <div class="rev-tile-media-badge">Photo</div>
-      </div>
-      <div class="rev-tile-text">&ldquo;The 1% fee was unbelievable at first — I thought there'd be hidden charges. There were none. Professional, honest, and genuinely got me the best deal on my Sobha apartment.&rdquo;</div>
-      <div class="rev-tile-author">
-        <div class="rev-tile-avatar"><div class="rev-tile-init">A</div></div>
-        <div><div class="rev-tile-name">Anand R.</div><div class="rev-tile-detail">3 BHK &middot; Sobha Whitefield</div></div>
-      </div>
-    </div>
-
-    <!-- Review 4 -->
-    <div class="rev-tile" data-stars="4" data-type="text">
-      <div class="rev-tile-badge">Investor</div>
-      <div class="rev-tile-stars">
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="rgba(233,193,118,.2)"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-      </div>
-      <div class="rev-tile-text">&ldquo;I've bought 3 properties over the years through various brokers. GharSetu is the first where I genuinely felt the advisor was on my side. Pre-launch access to Godrej at exceptional pricing.&rdquo;</div>
-      <div class="rev-tile-author">
-        <div class="rev-tile-avatar"><div class="rev-tile-init">S</div></div>
-        <div><div class="rev-tile-name">Suresh V.</div><div class="rev-tile-detail">3 BHK &middot; Godrej Properties</div></div>
-      </div>
-    </div>
-
-    <!-- Review 5 -->
-    <div class="rev-tile" data-stars="5" data-type="text">
-      <div class="rev-tile-badge">Verified Buyer</div>
-      <div class="rev-tile-stars">
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-        <svg class="rev-tile-star" viewBox="0 0 20 20" fill="#E9C176"><path d="M10 1l2.39 5.26H18l-4.5 3.63 1.64 5.61L10 12.27 4.86 15.5l1.64-5.61L2 6.26h5.61z"/></svg>
-      </div>
-      <div class="rev-tile-text">&ldquo;From the very first call, the team understood exactly what I needed. Within 2 weeks they shortlisted 4 verified options in my budget. Registration done in under 60 days. Exceptional.&rdquo;</div>
-      <div class="rev-tile-author">
-        <div class="rev-tile-avatar"><div class="rev-tile-init">M</div></div>
-        <div><div class="rev-tile-name">Meera T.</div><div class="rev-tile-detail">2 BHK &middot; Birla Estates</div></div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- FOOTER -->
-<div class="rev-footer">
-  <div class="rev-footer-copy">&copy; 2026 GharSetu Realities. All rights reserved.</div>
-  <a href="index.html" class="rev-footer-back">
-    &larr; Back to GharSetu Home
-  </a>
-</div>
-
-<script>
-// Progress bar
-window.addEventListener('scroll',()=>{document.getElementById('pb').style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+'%';},{passive:true});
-
-// Star rating
-let currentRating = 0;
-function setRating(val) {
-  currentRating = val;
-  document.getElementById('rating-val').value = val;
-  updateStars(val, false);
-}
-function hoverRating(val) { updateStars(val, true); }
-function unhoverRating() { updateStars(currentRating, false); }
-function updateStars(val, hovering) {
-  const stars = document.querySelectorAll('#star-input svg');
-  stars.forEach((s, i) => {
-    s.classList.toggle('active', i < val && !hovering);
-    s.classList.toggle('hovered', i < val && hovering);
-  });
-}
-
-// File upload preview
-let uploadedFiles = [];
-function handleFiles(files) {
-  Array.from(files).forEach(file => {
-    if (!['image/', 'video/'].some(t => file.type.startsWith(t))) return;
-    if (file.size > 25 * 1024 * 1024) { alert('File too large (max 25MB)'); return; }
-    uploadedFiles.push(file);
-    const reader = new FileReader();
-    reader.onload = e => {
-      const preview = document.getElementById('preview-grid');
-      const item = document.createElement('div');
-      item.className = 'preview-item';
-      const idx = uploadedFiles.length - 1;
-      if (file.type.startsWith('image/')) {
-        item.innerHTML = '<img src="' + e.target.result + '" alt="preview"><button class="preview-remove" onclick="removeFile(' + idx + ',this.parentElement)">✕</button>';
-      } else {
-        item.innerHTML = '<video src="' + e.target.result + '" style="width:100%;height:100%;object-fit:cover"></video><button class="preview-remove" onclick="removeFile(' + idx + ',this.parentElement)">✕</button>';
-      }
-      preview.appendChild(item);
-    };
-    reader.readAsDataURL(file);
-  });
-}
-function removeFile(idx, el) { uploadedFiles[idx] = null; el.remove(); }
-
-// Drag & drop
-const ua = document.getElementById('upload-area');
-ua.addEventListener('dragover', e => { e.preventDefault(); ua.style.borderColor='#E9C176'; });
-ua.addEventListener('dragleave', () => { ua.style.borderColor=''; });
-ua.addEventListener('drop', e => { e.preventDefault(); ua.style.borderColor=''; handleFiles(e.dataTransfer.files); });
-
-// Submit
-function submitReview() {
-  const name = document.getElementById('r-name').value.trim();
-  const text = document.getElementById('r-text').value.trim();
-  const rating = parseInt(document.getElementById('rating-val').value);
-  const errEl = document.getElementById('submit-error');
-
-  if (!name) { showError('Please enter your name.'); return; }
-  if (!text) { showError('Please write your review.'); return; }
-  if (!rating) { showError('Please select a star rating.'); return; }
-
-  const btn = document.getElementById('submit-btn');
-  btn.disabled = true;
-  btn.innerHTML = 'Submitting...';
-  errEl.style.display = 'none';
-
-  // Simulate submission (replace with actual backend call)
-  setTimeout(() => {
-    document.getElementById('review-form').style.display = 'none';
-    document.getElementById('success-msg').style.display = 'block';
-  }, 1200);
-}
-function showError(msg) {
-  const e = document.getElementById('submit-error');
-  e.textContent = msg;
-  e.style.display = 'block';
-}
-
-// Filter reviews
-function filterReviews(type, btn) {
-  document.querySelectorAll('.rev-filter').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.rev-tile').forEach(tile => {
-    if (type === 'all') { tile.style.display = ''; }
-    else if (type === 'photo') { tile.style.display = tile.dataset.type === 'photo' ? '' : 'none'; }
-    else { tile.style.display = tile.dataset.stars === type ? '' : 'none'; }
-  });
-}
-
-// Grid responsive
-function fixGrid() {
-  const m = document.querySelector('.rev-masonry');
-  if (!m) return;
-  m.style.columns = window.innerWidth < 600 ? '1' : window.innerWidth < 900 ? '2' : '3';
-}
-window.addEventListener('resize', fixGrid);
-fixGrid();
-
-// Submit form grid responsive
-function fixSubmitGrid() {
-  const g = document.querySelector('.submit-grid');
-  if (!g) return;
-  g.style.gridTemplateColumns = window.innerWidth < 900 ? '1fr' : '1fr 1fr';
-}
-window.addEventListener('resize', fixSubmitGrid);
-fixSubmitGrid();
-</script>
+  <script>
+    // Cursor
+    const cd = document.getElementById('cd'), cr = document.getElementById('cr');
+    if (cd && cr) {
+      let mx = 0, my = 0, rx = 0, ry = 0;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cd.style.left = mx + 'px'; cd.style.top = my + 'px'; });
+      (function a() { rx += (mx - rx) * .1; ry += (my - ry) * .1; cr.style.left = rx + 'px'; cr.style.top = ry + 'px'; requestAnimationFrame(a); })();
+      document.querySelectorAll('a,button,.sc-,.rt,.wi,.fbt').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('ch'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('ch'));
+      });
+      document.addEventListener('mousedown', () => document.body.classList.add('ca'));
+      document.addEventListener('mouseup', () => document.body.classList.remove('ca'));
+    }
+    // Progress
+    window.addEventListener('scroll', () => { document.getElementById('pb').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%'; }, { passive: true });
+    // Nav
+    const nv = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nv.classList.toggle('sc', window.scrollY > 40); }, { passive: true });
+    // Hero entrance
+    setTimeout(() => {
+      ['hr', 'hl'].forEach(id => { const e = document.getElementById(id); if (e) e.classList.add('in'); });
+      setTimeout(() => {
+        ['ht1', 'ht2'].forEach(id => { const e = document.getElementById(id); if (e) e.classList.add('in'); });
+        setTimeout(() => { ['hrb', 'hsb', 'hsc'].forEach(id => { const e = document.getElementById(id); if (e) e.classList.add('in'); }); }, 200);
+      }, 150);
+    }, 80);
+    // Reveal
+    const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); }); }, { threshold: .07, rootMargin: '0px 0px -36px 0px' });
+    document.querySelectorAll('.rv,.rvr').forEach(el => obs.observe(el));
+    // Tile reveal
+    const tob = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { Array.from(e.target.querySelectorAll('.rt')).forEach((t, i) => setTimeout(() => t.classList.add('vs'), i * 80)); tob.unobserve(e.target); } }); }, { threshold: .05 });
+    const rg = document.getElementById('rg'); if (rg) tob.observe(rg);
+    // Rating bars
+    const bob = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { document.querySelectorAll('.rbf').forEach((b, i) => setTimeout(() => b.style.width = b.dataset.w + '%', i * 100 + 200)); bob.unobserve(e.target); } }); }, { threshold: .3 });
+    const rc2 = document.querySelector('.rc'); if (rc2) bob.observe(rc2);
+    // Stars
+    let rat = 0;
+    const sbs = document.querySelectorAll('.sb');
+    function us(v, hv) { sbs.forEach((s, i) => { s.classList.toggle('lit', i < v && !hv); s.classList.toggle('hv', i < v && hv); }); }
+    sbs.forEach(s => { const v = +s.dataset.v; s.addEventListener('click', () => { rat = v; document.getElementById('rr').value = v; us(v, false); }); s.addEventListener('mouseenter', () => us(v, true)); s.addEventListener('mouseleave', () => us(rat, false)); });
+    // Upload
+    let ups = [];
+    function hf(files) { Array.from(files).forEach(file => { if (!['image/', 'video/'].some(t => file.type.startsWith(t))) return; if (file.size > 25 * 1024 * 1024) { alert('Max 25MB'); return; } ups.push(file); const r = new FileReader(); r.onload = e => { const pg = document.getElementById('pg'); const it = document.createElement('div'); it.className = 'pi'; const idx = ups.length - 1; const tg = file.type.startsWith('image/') ? `<img src="${e.target.result}" alt="p">` : `<video src="${e.target.result}" style="width:100%;height:100%;object-fit:cover"></video>`; it.innerHTML = tg + `<button class="pr" onclick="rf(${idx},this.parentElement)">&#10005;</button>`; pg.appendChild(it); }; r.readAsDataURL(file); }); }
+    function rf(idx, el) { ups[idx] = null; el.remove(); }
+    const uz = document.getElementById('uz'), mi = document.getElementById('mi');
+    if (uz && mi) { mi.onchange = () => hf(mi.files); uz.addEventListener('dragover', e => { e.preventDefault(); uz.classList.add('dg'); }); uz.addEventListener('dragleave', () => uz.classList.remove('dg')); uz.addEventListener('drop', e => { e.preventDefault(); uz.classList.remove('dg'); hf(e.dataTransfer.files); }); }
+    // Submit
+    function sub() {
+      const n = document.getElementById('rn').value.trim();
+      const t = document.getElementById('rt').value.trim();
+      const r = +document.getElementById('rr').value;
+      const se = document.getElementById('se'); se.style.display = 'none';
+      if (!n) { sE('Please enter your name.'); return; }
+      if (!r) { sE('Please select a star rating.'); return; }
+      if (!t) { sE('Please write your review.'); return; }
+      const b = document.getElementById('sbb'); b.disabled = true; b.innerHTML = 'Submitting&hellip;';
+      setTimeout(() => { document.getElementById('rfm').style.display = 'none'; document.getElementById('smsg').style.display = 'block'; }, 1200);
+    }
+    function sE(m) { const e = document.getElementById('se'); e.textContent = m; e.style.display = 'block'; }
+    // Filter
+    function flt(type, btn) {
+      document.querySelectorAll('.fbt').forEach(b => b.classList.remove('act')); btn.classList.add('act');
+      document.querySelectorAll('.rt').forEach(tile => {
+        const show = type === 'all' ? true : type === 'photo' ? tile.dataset.t === 'photo' : tile.dataset.s === type;
+        if (show) { tile.classList.remove('hd'); tile.style.display = ''; requestAnimationFrame(() => tile.classList.add('vs')); }
+        else { tile.classList.add('hd'); tile.classList.remove('vs'); setTimeout(() => { if (tile.classList.contains('hd')) tile.style.display = 'none'; }, 300); }
+      });
+    }
+  </script>
 </body>
+
 </html>
