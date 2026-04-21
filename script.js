@@ -59,22 +59,7 @@ function sbNav(el) {
   return false;
 }
 
-// Privacy
-const sids = ['hero', 'about', 'services', 'fee', 'devnet', 'loan', 'process', 'quote', 'founder', 'contact', 'reviews'];
-function showPrivacy() {
-  sids.forEach(id => { const e = document.getElementById(id); if (e) e.style.display = 'none'; });
-  document.querySelectorAll('.panels,.twrap').forEach(e => e.style.display = 'none');
-  document.getElementById('devnet').style.display = 'none';
-  document.getElementById('privacy').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' }); closeSidebar();
-}
-function hidePrivacy() {
-  sids.forEach(id => { const e = document.getElementById(id); if (e) e.style.display = ''; });
-  document.querySelectorAll('.panels,.twrap').forEach(e => e.style.display = '');
-  document.getElementById('devnet').style.display = '';
-  document.getElementById('privacy').style.display = 'none';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+// Privacy Policy — now a separate page (privacy.html)
 
 // Scroll reveal
 const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); }); }, { threshold: .07, rootMargin: '0px 0px -36px 0px' });
