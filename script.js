@@ -88,3 +88,15 @@ window.addEventListener('scroll', () => {
 
 // Close sidebar on escape key
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
+// Callback date — min = today
+const cbDate = document.getElementById('gf-date');
+if (cbDate) cbDate.min = new Date().toISOString().split('T')[0];
+
+// Toggle custom exact-time picker
+function toggleCustomTime(val) {
+  const wrap = document.getElementById('gf-custom-time-wrap');
+  if (!wrap) return;
+  wrap.style.display = val === 'custom' ? 'block' : 'none';
+  const inp = document.getElementById('gf-custom-time');
+  if (inp) inp.required = val === 'custom';
+}

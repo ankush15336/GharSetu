@@ -22,14 +22,37 @@
             statusEl.className = '';
             statusEl.textContent = '';
 
+            const callbackDate = form.querySelector('[name="callback_date"]')?.value?.trim() || '';
+            let callbackSlot   = form.querySelector('[name="callback_slot"]')?.value?.trim() || '';
+            const exactTime    = form.querySelector('[name="callback_exact_time"]')?.value?.trim() || '';
+
+            // If "custom" slot selected, use the exact time input
+            if (callbackSlot === 'custom' && exactTime) {
+              // Convert HH:MM to 12-hr format for readability
+              const [h, m] = exactTime.split(':').map(Number);
+              const ampm = h >= 12 ? 'PM' : 'AM';
+              const h12  = h % 12 || 12;
+              callbackSlot = `${h12}:${String(m).padStart(2,'0')} ${ampm}`;
+            } else if (callbackSlot === 'custom') {
+              callbackSlot = 'Exact time not specified';
+            }
+
+            const callbackInfo = callbackDate || callbackSlot
+              ? `\n\n📅 CALLBACK REQUEST\nDate: ${callbackDate || 'Not specified'}\nTime: ${callbackSlot || 'Any time'}`
+              : '';
+
             const payload = {
                 access_key: ACCESS_KEY,
-                subject: 'New Enquiry — GharSetu Realities',
+                subject: callbackDate
+                  ? `🔔 Callback Requested — GharSetu (${callbackDate}, ${callbackSlot || 'Any time'})`
+                  : 'New Enquiry — GharSetu Realities',
                 name: form.querySelector('[name="name"]').value.trim(),
                 email: form.querySelector('[name="email"]').value.trim(),
                 phone: form.querySelector('[name="phone"]').value.trim(),
-                message: form.querySelector('[name="message"]').value.trim(),
-                botcheck: ''          // honeypot
+                message: (form.querySelector('[name="message"]').value.trim() || '(No message)') + callbackInfo,
+                callback_date: callbackDate || 'Not requested',
+                callback_time: callbackSlot || 'Any time',
+                botcheck: ''
             };
 
             try {
@@ -41,9 +64,21 @@
                 const json = await res.json();
 
                 if (json.success) {
-                    statusEl.textContent = '✓ Message received! We will reach out within 24 hours.';
+                    const callbackDate = form.querySelector('[name="callback_date"]')?.value?.trim();
+                    const callbackSlot = form.querySelector('[name="callback_slot"]')?.value?.trim();
+                    const exactTime    = form.querySelector('[name="callback_exact_time"]')?.value?.trim();
+                    const timeLabel = callbackSlot === 'custom' && exactTime ? (() => {
+                      const [h,m] = exactTime.split(':').map(Number);
+                      return `${h%12||12}:${String(m).padStart(2,'0')} ${h>=12?'PM':'AM'}`;
+                    })() : callbackSlot;
+                    if (callbackDate && timeLabel) {
+                      statusEl.textContent = `✓ Callback scheduled for ${callbackDate} at ${timeLabel}. We will call you then!`;
+                    } else {
+                      statusEl.textContent = '✓ Message received! We will reach out within 24 hours.';
+                    }
                     statusEl.className = 'gf-success';
                     form.reset();
+                    document.getElementById('gf-custom-time-wrap').style.display = 'none';
                 } else {
                     throw new Error(json.message || 'Submission failed');
                 }
