@@ -21,17 +21,6 @@ if (nav) {
 // Progress
 window.addEventListener('scroll', () => { document.getElementById('pb').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%'; }, { passive: true });
 
-// Cursor
-const cd = document.getElementById('cdot'), cr = document.getElementById('cring');
-if (window.matchMedia('(pointer:fine)').matches && cd && cr) {
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cd.style.transform = 'translate(' + (mx - 3) + 'px,' + (my - 3) + 'px)'; });
-  (function a() { rx += (mx - rx) * .1; ry += (my - ry) * .1; cr.style.transform = 'translate(' + (rx - 18) + 'px,' + (ry - 18) + 'px)'; requestAnimationFrame(a); })();
-  document.querySelectorAll('a,button,.proj-card,.panel,.dlc,.svc-row,.fee-blk,.bankc,.sm-item,.lf').forEach(el => {
-    el.addEventListener('mouseenter', () => { cr.style.width = '50px'; cr.style.height = '50px'; cr.style.borderColor = 'rgba(233,193,118,.6)'; });
-    el.addEventListener('mouseleave', () => { cr.style.width = '36px'; cr.style.height = '36px'; cr.style.borderColor = 'rgba(233,193,118,.35)'; });
-  });
-}
 
 // Nav is absolute, scrolls with page
 
