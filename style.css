@@ -396,14 +396,21 @@ a {
   position: absolute;
   inset: 0;
   background: url("image/homepage.png") center/cover no-repeat;
-  background-position: center 100%;
-  transform: scale(1.04);
+  background-position: center 10%;
+  transform: scale(1.04) translateY(40px);
   transform-origin: center top;
   transition: transform 8s ease;
 }
 
+@media (min-width: 768px) {
+  #hbg {
+    background-position: center 40%;
+    transform: scale(1.04) translateY(0);
+  }
+}
+
 #hbg.loaded {
-  transform: scale(1)
+  transform: scale(1) translateY(0);
 }
 
 .ho {
@@ -3629,5 +3636,9 @@ body {
   #hbg {
     background-position: center 40%;
     transform-origin: center 40%;
+    transform: scale(1.04) translateY(0);
+  }
+  #hbg.loaded {
+    transform: scale(1) translateY(0);
   }
 }
