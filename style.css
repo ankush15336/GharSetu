@@ -396,9 +396,9 @@ a {
   position: absolute;
   inset: 0;
   background: url("image/homepage.png") center/cover no-repeat;
-  background-position: center 55%;
+  background-position: center 70%;
   transform: scale(1.04);
-  transform-origin: center 55%;
+  transform-origin: center 70%;
   transition: transform 8s ease;
 }
 
