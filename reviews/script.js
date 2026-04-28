@@ -22,7 +22,7 @@ const FIREBASE_CONFIG = {
 const SAMPLE_REVIEWS = [
   {
     id: 's1', name: 'Rohit M.', rating: 5, badge: 'Verified Buyer',
-    text: 'GharSetu made the entire process seamless. Got a Prestige property 8% below market rate. Thorough legal support throughout.',
+    text: 'GharSetu made the entire process seamless. Got a Prestige property at a great price. Thorough legal support throughout.',
     property: '3 BHK · Prestige Sarjapura',
     photoURL: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=85&fit=crop',
     timestamp: Date.now() - 86400000 * 5

@@ -3610,3 +3610,22 @@ body {
   cursor: pointer;
 }
 .gf-select option { background:#191c1a; color:#E5E2E1; }
+
+/* ── NAV LOGO DESKTOP SCALING ── */
+.nav-logo {
+  min-width: 140px;
+  max-width: 190px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media(min-width: 1024px) {
+  .nav-logo {
+    min-width: 180px;
+    max-width: 250px;
+  }
+  #hbg {
+    background-position: center 40%;
+    transform-origin: center 40%;
+  }
+}
